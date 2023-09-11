@@ -13,7 +13,7 @@ def is_palindrome(origin: Union[str, int], /) -> bool:
 
     return True
 
-# Примеры использования
+
 print(is_palindrome("aba"))
 print(is_palindrome("abc"))
 print(is_palindrome(12345))
