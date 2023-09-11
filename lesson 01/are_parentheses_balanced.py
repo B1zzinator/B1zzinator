@@ -1,16 +1,20 @@
-def get_longest_uniq_length(origin: str, /) -> int:
-  
-    max_length = 0
-    current_length = 0
-    last_seen = {}
+def are_parentheses_balanced(origin: str) -> bool:
 
-    for index, char in enumerate(origin):
-        if char in last_seen and last_seen[char] >= current_length:
-            current_length = last_seen[char] + 1
-        else:
-            current_length += 1
+    stack = []
+    brackets = {'Х': '(', '}': '{', ']': '['}
 
-        last_seen[char] = index
-        max_length = max(max_length, current_length)
 
-    return max_length
+    for char in origin:
+        if char in brackets.values():
+            stack.append(char)
+        elif char in brackets.keys():
+             if not stack or stack.pop() != brackets[char]:
+                return False
+
+    if len(stack) == 0:
+        print("Скобки сбалансированы.")
+        return True
+    else:
+        print("Скобки не сбалансированы.")
+        return False
+result = are_parentheses_balanced("({[]})")
