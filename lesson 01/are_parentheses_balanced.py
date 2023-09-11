@@ -1,14 +1,5 @@
 def get_longest_uniq_length(origin: str, /) -> int:
-    """
-    Возвращает длину самой длинной последовательности уникальных символов
-    :param origin: исходная последовательность
-    :type origin: str
-    :return: длина самой длинной последовательности уникальных символов
-    :rtype: int
-    Примеры использования:
-    >>> assert get_longest_uniq_length("abcdefg") == 7
-    >>> assert get_longest_uniq_length("racecar") == 5
-    """
+  
     max_length = 0
     current_length = 0
     last_seen = {}
